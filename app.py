@@ -43,12 +43,12 @@ def plot_metrics(metrics_list):
 
 df = pd.read_csv("dataset/finalll.csv")
 
-courses = pd.read_csv("dataset1/courses.csv")
-assessments = pd.read_csv("dataset1/assessments.csv")
-studentAssessment = pd.read_csv("dataset1/studentAssessment.csv")
-studentInfo = pd.read_csv("dataset1/studentInfo.csv")
-studentRegistration = pd.read_csv("dataset1/studentRegistration.csv")
-vle = pd.read_csv("dataset1/vle.csv")
+courses = pd.read_csv("dataset/courses.csv")
+assessments = pd.read_csv("dataset/assessments.csv")
+studentAssessment = pd.read_csv("dataset/studentAssessment.csv")
+studentInfo = pd.read_csv("dataset/studentInfo.csv")
+studentRegistration = pd.read_csv("dataset/studentRegistration.csv")
+vle = pd.read_csv("dataset/vle.csv")
 
 
 class_name = ["final_result"]
