@@ -563,7 +563,7 @@ if slct == "Classification Model":
         xtrain, xtest, ytrain, ytest = train_test_split(x,y,test_size=0.2, random_state=0)
         #parameters
         st.sidebar.subheader("Parameters: ")
-        iterations = st.sidebar.slider("Iterations", min_value=5, max_value=75, value=100, step=5, format=None, key='iterations')
+        iterations = st.sidebar.slider("Iterations", min_value=5, max_value=75, value=50, step=5, format=None, key='iterations')
         C = st.sidebar.number_input("Regularization Factor",min_value=0.01,max_value=1.0,step=0.01,key='C')
         solver = st.sidebar.radio("Solver",("newton-cg", "lbfgs", "liblinear", "sag", "saga"),key='solver')
         #metrics
