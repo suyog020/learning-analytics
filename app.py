@@ -57,7 +57,7 @@ st.title('Learning Analytics ')
 st.write('\n')  
 st.write('\n')
 
-slct = st.sidebar.selectbox(" ",("Home","Show Dataset","Data Visualization","Classification Model"))
+slct = st.sidebar.selectbox(" ",("Home","Show Dataset","Data Visualization","Classification Model","Model Comparison"))
 
 if slct == "Home":
     st.header("About the Project")
@@ -659,3 +659,35 @@ if slct == "Classification Model":
             st.write("")
             st.write("Model Precision: ", precision_score(ytest,ypred,labels=class_name))
             plot_metrics(metrics)
+if slct == "Model Comparison":
+    st.subheader("Accuracy vs ML models")
+    p = ["KNN","LR","DT","RF"]
+    q = [76,86,87,91]
+
+    fig = go.Figure(data=go.Scatter(x=p, y=q))
+    fig.update_yaxes (title='Accuracy')
+    fig.update_xaxes (title='ML models')
+
+    st.plotly_chart (fig)
+    st.write("")
+    st.write("")
+
+    st.subheader("AUC vs ML models")    
+    p = ["KNN","LR","DT","RF"]
+    q = [74,90,90,95]
+
+    fig = go.Figure(data=go.Scatter(x=p, y=q))
+    fig.update_yaxes (title='AUC')
+    fig.update_xaxes (title='ML models')
+
+    st.plotly_chart (fig)
+
+    st.subheader("AP vs ML models")    
+    p = ["KNN","LR","DT","RF"]
+    q = [85,95,94,98]
+
+    fig = go.Figure(data=go.Scatter(x=p, y=q))
+    fig.update_yaxes (title='AP')
+    fig.update_xaxes (title='ML models')
+
+    st.plotly_chart (fig)
