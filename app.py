@@ -266,17 +266,6 @@ if slct == "Data Visualization":
     st.write("")
     st.write("")
     
-    st.write("")
-    st.write("")
-    st.header("When are materials most recommended")
-    st.write("")
-    st.write("")
-    _ = vle.dropna()
-    fig = px.histogram(_.week_from)
-    st.subheader("This measure of time is a little different from what we were dealing with so far. To arrive on numbered days, it was enough to multiply the week data by 7. However, we can see the same peaks of activities submitted in the weeks when materials are recommended.")
-    st.write("")
-
-
     
     ###########student Info
     st.write("")
@@ -565,7 +554,7 @@ if slct == "Data Visualization":
     
 if slct == "Classification Model":
 
-    clfr = st.sidebar.selectbox("Classifier",("Logistic Regression","Decision Tree","Random Forest","KNN"))
+    clfr = st.sidebar.selectbox("Classifier",("KNN","Decision Tree","Random Forest","Logistic Regression"))
 
     if clfr == "Logistic Regression":
         
@@ -574,7 +563,7 @@ if slct == "Classification Model":
         xtrain, xtest, ytrain, ytest = train_test_split(x,y,test_size=0.2, random_state=0)
         #parameters
         st.sidebar.subheader("Parameters: ")
-        iterations = st.sidebar.slider("Iterations", min_value=10, max_value=1000, value=100, step=5, format=None, key='iterations')
+        iterations = st.sidebar.slider("Iterations", min_value=5, max_value=75, value=100, step=5, format=None, key='iterations')
         C = st.sidebar.number_input("Regularization Factor",min_value=0.01,max_value=1.0,step=0.01,key='C')
         solver = st.sidebar.radio("Solver",("newton-cg", "lbfgs", "liblinear", "sag", "saga"),key='solver')
         #metrics
